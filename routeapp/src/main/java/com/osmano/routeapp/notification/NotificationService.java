@@ -1,7 +1,6 @@
 package com.osmano.routeapp.notification;
 
 import com.osmano.routeapp.route.RouteCard;
-import com.osmano.routeapp.route.RouteCardValidator;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,14 +1,14 @@
 package com.osmano.routeapp.route;
 
 import org.springframework.stereotype.Component;
-import org.springframework.util.RouteMatcher;
+
 
 import java.util.List;
 
 @Component
 public class RouteCardValidator {
 
-    public  RouteCard validateRouteCard(RouteCard routeCard) {
+    public void validateRouteCard(RouteCard routeCard) {
 
         if (routeCard == null) {
             throw new IllegalArgumentException("RouteCard cannot be null");
@@ -16,15 +16,23 @@ public class RouteCardValidator {
 
 
         if (routeCard.getTitle() == null || routeCard.getTitle().isBlank()) {
-            throw new IllegalArgumentException("Title required");
+            throw new IllegalArgumentException("Route Card Title cannot be blank.");
         }
 
 
         List<String> places = routeCard.getPlaces();
-        if (places == null || places.size() < 2 || places.size() > 3) {
-            throw new IllegalArgumentException("Places should meet the necessary conditions.");
+
+        if (places == null || places.isEmpty()) {
+            throw new IllegalArgumentException("Route card should have at least two place.");
         }
 
-        return routeCard;
+        if (places.size() < 2) {
+            throw new IllegalArgumentException("Route card should have at least two place.");
+        }
+
+        if (places.size() > 3) {
+            throw new IllegalArgumentException("Route card should have maximum three place.");
+        }
+
     }
 }

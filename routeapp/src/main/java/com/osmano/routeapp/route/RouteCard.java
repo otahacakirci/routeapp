@@ -8,7 +8,7 @@ public class RouteCard {
 
     private List<String> places;
 
-    public RouteCard(String title) {
+    public RouteCard() {
     }
 
     public RouteCard(String title, List<String> places) {
