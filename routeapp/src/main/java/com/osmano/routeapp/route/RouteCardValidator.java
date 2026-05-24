@@ -8,7 +8,7 @@ import java.util.List;
 @Component
 public class RouteCardValidator {
 
-    public static RouteCard validateRouteCard(RouteCard routeCard) {
+    public  RouteCard validateRouteCard(RouteCard routeCard) {
 
         if (routeCard == null) {
             throw new IllegalArgumentException("RouteCard cannot be null");

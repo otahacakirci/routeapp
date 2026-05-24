@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class NotificationService {
 
-    public static void notifyRouteCardCreated(RouteCard routeCard) {
+    public void notifyRouteCardCreated(RouteCard routeCard) {
         System.out.println("A new itinerary has been created: " + routeCard.getTitle());
     }
 }
