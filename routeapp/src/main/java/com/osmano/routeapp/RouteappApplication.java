@@ -26,8 +26,8 @@ public class RouteappApplication {
 
 			RouteCard createdRouteCard = routeCardService.createRouteCard(validRouteCard);
 
-			System.out.println("Oluşturulan rota kartı: " + createdRouteCard.getTitle());
-			System.out.println("Mekanlar: " + createdRouteCard.getPlaces());
+			System.out.println("Created route card: " + createdRouteCard.getTitle());
+			System.out.println("Places: " + createdRouteCard.getPlaces());
 
 			RouteCard invalidRouteCard = new RouteCard(
 					"Bozuk Rota",
@@ -37,7 +37,7 @@ public class RouteappApplication {
 			try {
 				routeCardService.createRouteCard(invalidRouteCard);
 			} catch (IllegalArgumentException exception) {
-				System.out.println("Validation hatası: " + exception.getMessage());
+				System.out.println("Validation error: " + exception.getMessage());
 			}
 		};
 	}

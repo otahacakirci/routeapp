@@ -15,7 +15,7 @@ public class RouteCardService {
     }
 
     public RouteCard createRouteCard(RouteCard routeCard) {
-         routeCardValidator.validateRouteCard(routeCard);
+        routeCardValidator.validate(routeCard);
         notificationService.notifyRouteCardCreated(routeCard);
         return routeCard;
     }
