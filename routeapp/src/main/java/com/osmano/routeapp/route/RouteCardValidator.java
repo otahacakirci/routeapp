@@ -30,7 +30,7 @@ public class RouteCardValidator {
         List<String> places = routeCard.getPlaces();
 
         if (places == null) {
-            throw new IllegalArgumentException("Route card must contain at least "+ minPlaces +" places.");
+            throw new IllegalArgumentException("Route card places cannot be null.");
         }
 
         if (places.size() < minPlaces) {

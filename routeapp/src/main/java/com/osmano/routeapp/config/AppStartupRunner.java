@@ -22,10 +22,11 @@ public class AppStartupRunner implements CommandLineRunner {
 
 
     @Override
-    public void run(String ... args) throws Exception  {
+    public void run(String... args) {
 
         if(!demoEnabled) {
             System.out.println("Startup demo is disabled.");
+            return;
         }
 
         RouteCard validRouteCard = new RouteCard(
