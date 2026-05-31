@@ -8,14 +8,17 @@ public class RouteCardService {
 
     private final RouteCardValidator routeCardValidator;
     private final NotificationService notificationService;
+    private final RouteCardRepository routeCardRepository;
 
-    public RouteCardService(RouteCardValidator routeCardValidator, NotificationService notificationService) {
+    public RouteCardService(RouteCardValidator routeCardValidator, NotificationService notificationService, RouteCardRepository routeCardRepository) {
         this.routeCardValidator = routeCardValidator;
         this.notificationService = notificationService;
+        this.routeCardRepository = routeCardRepository;
     }
 
     public RouteCard createRouteCard(RouteCard routeCard) {
         routeCardValidator.validate(routeCard);
+        routeCardRepository.save(routeCard);
         notificationService.notifyRouteCardCreated(routeCard);
         return routeCard;
     }
