@@ -17,10 +17,10 @@ public class RouteCardService {
     }
 
     public RouteCard createRouteCard(RouteCard routeCard) {
-        routeCardValidator.validate(routeCard);
-        routeCardRepository.save(routeCard);
-        notificationService.notifyRouteCardCreated(routeCard);
-        return routeCard;
+        RouteCard savedRouteCard = routeCardRepository.save(routeCard);
+        notificationService.notifyRouteCardCreated(savedRouteCard);
+        return savedRouteCard;
+
     }
 
 }
