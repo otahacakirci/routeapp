@@ -1,11 +1,26 @@
 package com.osmano.routeapp.route;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 
+@Entity
+@Table(name = "route_cards")
 public class RouteCard {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+
 
     private String title;
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(
+            name = "route_card_places",
+            joinColumns = @JoinColumn(name = "route_card_id")
+    )
+    @Column(name = "place_name")
     private List<String> places;
 
     public RouteCard() {
