@@ -29,9 +29,8 @@ public class AppStartupRunner implements CommandLineRunner {
             return;
         }
 
-        RouteCard validRouteCard = new RouteCard(
-                "Kampüs Sonrası Mini Rota",
-                List.of("Kahveci", "Kütüphane", "Park")
+        RouteCard validRouteCard = new RouteCard("Campus Break Route",
+                List.of("Coffee Shop", "Library", "Park")
         );
 
         RouteCard createdRouteCard = routeCardService.createRouteCard(validRouteCard);
@@ -41,8 +40,8 @@ public class AppStartupRunner implements CommandLineRunner {
         System.out.println("Places: " + createdRouteCard.getPlaces());
 
         RouteCard invalidRouteCard = new RouteCard(
-                "Bozuk Rota",
-                List.of("Kahveci")
+                "Invalid Route Card",
+                List.of("Coffee Shop")
         );
 
         try {
