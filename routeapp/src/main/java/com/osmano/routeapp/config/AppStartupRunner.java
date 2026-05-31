@@ -36,6 +36,7 @@ public class AppStartupRunner implements CommandLineRunner {
 
         RouteCard createdRouteCard = routeCardService.createRouteCard(validRouteCard);
 
+        System.out.println("Created route card id: " + createdRouteCard.getId());
         System.out.println("Created route card: " + createdRouteCard.getTitle());
         System.out.println("Places: " + createdRouteCard.getPlaces());
 
