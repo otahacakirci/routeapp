@@ -9,11 +9,16 @@ import java.util.List;
 @Component
 public class RouteCardValidator {
 
-    @Value("${app.route-card.min-places}")
-    private int minPlaces;
+    private final int minPlaces;
+    private final int maxPlaces;
 
-    @Value("${app.route-card.max-places}")
-    private int maxPlaces;
+    public RouteCardValidator(
+            @Value("${app.route-card.min-places}") int minPlaces,
+            @Value("${app.route-card.max-places}") int maxPlaces
+    ) {
+        this.minPlaces = minPlaces;
+        this.maxPlaces = maxPlaces;
+    }
 
     public void validate(RouteCard routeCard) {
 
