@@ -17,6 +17,7 @@ public class RouteCardService {
     }
 
     public RouteCard createRouteCard(RouteCard routeCard) {
+        routeCardValidator.validate(routeCard);
         RouteCard savedRouteCard = routeCardRepository.save(routeCard);
         notificationService.notifyRouteCardCreated(savedRouteCard);
         return savedRouteCard;
